@@ -80,10 +80,9 @@ def sigmoid(x: float) -> float:
 
     for stability.
     """
-    # if x >= 0:
-    #     return inv(add(1.0, exp(neg(x))))
-    # return exp(x) / (add(1.0, exp(x)))
-    return inv(add(1, exp(neg(x)))) if x >= 0 else exp(x) / (add(1, exp(x)))
+    if x >= 0:
+        return inv(add(1.0, exp(neg(x))))
+    return exp(x) / (add(1.0, exp(x)))
 
 
 def relu(x: float) -> float:
